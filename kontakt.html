@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontakt - UMFH74</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="./attachments/UMFH74Logo.jpg" alt="UMFH74 Logo">
+                <div class="logo-text">UMFH74</div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Hem</a></li>
+                <li><a href="index.html#om">Om Oss</a></li>
+                <li><a href="produkter.html">Produkter</a></li>
+                <li><a href="appar.html">Appar</a></li>
+                <li><a href="kontakt.html">Kontakt</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="hero-small">
+        <div class="container">
+            <h1>Kontakta Oss</h1>
+            <p>Vi svarar gärna på dina frågor</p>
+        </div>
+    </div>
+
+    <section class="section">
+        <div class="container">
+            <a href="index.html" class="back-btn">← Tillbaka till startsidan</a>
+            
+            <div class="contact-form">
+                <h2 style="text-align: left; margin-bottom: 2rem; font-size: 1.8rem;">Skicka ett meddelande</h2>
+                <form action="https://formspree.io/f/your-email-here" method="POST">
+                    <label for="name">Namn</label>
+                    <input type="text" id="name" name="name" required>
+                    
+                    <label for="email">E-post</label>
+                    <input type="email" id="email" name="email" required>
+                    
+                    <label for="subject">Ämne</label>
+                    <input type="text" id="subject" name="subject" required>
+                    
+                    <label for="message">Meddelande</label>
+                    <textarea id="message" name="message" rows="6" required></textarea>
+                    
+                    <button type="submit">Skicka meddelande</button>
+                </form>
+            </div>
+            
+            <div class="contact-info">
+                <div>
+                    <h3 style="color: var(--primary); margin-bottom: 1rem;">Kontaktinformation</h3>
+                    <p><strong>E-post:</strong> <a href="mailto:umfh74@gmail.com" style="color: var(--accent); text-decoration: none;">umfh74@gmail.com</a></p>
+                    <p style="margin-top: 0.5rem;"><strong>Företag:</strong> Utveckling Markus Fransson i Huskvarna 74 AB</p>
+                    <p>Huskvarna, Sverige</p>
+                </div>
+                <div>
+                    <h3 style="color: var(--primary); margin-bottom: 1rem;">Öppettider</h3>
+                    <p>Måndag - Fredag: 09:00 - 17:00</p>
+                    <p>Lördag - Söndag: Stängt</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content container">
+            <div class="footer-col">
+                <h3>UMFH74</h3>
+                <p>Utveckling Markus Fransson i Huskvarna 74 AB</p>
+            </div>
+            <div class="footer-col">
+                <h3>Länkar</h3>
+                <a href="index.html">Hem</a>
+                <a href="produkter.html">Produkter</a>
+                <a href="appar.html">Appar</a>
+                <a href="kontakt.html">Kontakt</a>
+            </div>
+            <div class="footer-col">
+                <h3>Kontakt</h3>
+                <p><a href="mailto:umfh74@gmail.com">umfh74@gmail.com</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 Utveckling Markus Fransson i Huskvarna 74 AB
+        </div>
+    </footer>
+</body>
+</html>
