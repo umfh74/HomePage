@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - Smart Holiday Alarm Clock</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-bg: #f8fafc;
+            --color-card: #ffffff;
+            --color-text-primary: #0f172a;
+            --color-text-secondary: #475569;
+            --color-text-muted: #64748b;
+            --color-primary: #0284c7;
+            --color-border: #e2e8f0;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --color-bg: #0f172a;
+                --color-card: #1e293b;
+                --color-text-primary: #f8fafc;
+                --color-text-secondary: #cbd5e1;
+                --color-text-muted: #94a3b8;
+                --color-primary: #38bdf8;
+                --color-border: #334155;
+            }
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            line-height: 1.6;
+            background-color: var(--color-bg);
+            color: var(--color-text-secondary);
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .card {
+            background-color: var(--color-card);
+            border: 1px solid var(--color-border);
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05), 0 2px 4px -2px rgb(0 0 0 / 0.05);
+        }
+
+        h1 {
+            color: var(--color-text-primary);
+            font-size: 2.25rem;
+            font-weight: 700;
+            margin-top: 0;
+            margin-bottom: 8px;
+            letter-spacing: -0.025em;
+        }
+
+        h2 {
+            color: var(--color-text-primary);
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-top: 32px;
+            margin-bottom: 16px;
+            letter-spacing: -0.02em;
+            border-bottom: 1px solid var(--color-border);
+            padding-bottom: 8px;
+        }
+
+        h3 {
+            color: var(--color-text-primary);
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin-top: 24px;
+            margin-bottom: 12px;
+        }
+
+        p {
+            margin-top: 0;
+            margin-bottom: 16px;
+        }
+
+        ul, ol {
+            margin-top: 0;
+            margin-bottom: 16px;
+            padding-left: 24px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        .meta-info {
+            font-size: 0.875rem;
+            color: var(--color-text-muted);
+            margin-bottom: 32px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .badge {
+            background-color: var(--color-bg);
+            border: 1px solid var(--color-border);
+            border-radius: 6px;
+            padding: 4px 10px;
+            font-family: monospace;
+            font-size: 0.8rem;
+            color: var(--color-text-secondary);
+        }
+
+        a {
+            color: var(--color-primary);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .highlight-box {
+            background-color: var(--color-bg);
+            border-left: 4px solid var(--color-primary);
+            border-radius: 4px;
+            padding: 16px 20px;
+            margin-bottom: 24px;
+        }
+
+        .highlight-box p {
+            margin: 0;
+            font-weight: 500;
+            color: var(--color-text-primary);
+        }
+
+        footer {
+            margin-top: 40px;
+            text-align: center;
+            font-size: 0.875rem;
+            color: var(--color-text-muted);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card" id="privacy-policy-card">
+            <h1>Privacy Policy</h1>
+            <div class="meta-info">
+                <span><strong>Effective Date:</strong> July 7, 2026</span>
+                <span><strong>App Name:</strong> Smart Holiday Alarm Clock</span>
+                <span><strong>Package Name:</strong> <span class="badge">com.umfh74.holiday.aware.alarm.clock</span></span>
+            </div>
+
+            <div class="highlight-box">
+                <p>Simple Summary: We value your privacy. Smart Holiday Alarm Clock is designed as an offline-first utility. We collect absolutely zero personal data, track no user behavior, and run entirely locally on your device.</p>
+            </div>
+
+            <h2>1. Introduction</h2>
+            <p>This privacy policy governs your use of the software application <strong>Smart Holiday Alarm Clock</strong> ("Application") for mobile devices, which was created by the developer. The Application is an intelligent workday alarm clock that automatically synchronizes with public calendars to bypass alarms on official national holidays, giving you peace of mind and uninterrupted rest.</p>
+
+            <h2>2. Information Collection and Use</h2>
+            <p><strong>The Application does NOT collect, transmit, store, or share any personal information.</strong></p>
+            <p>All configurations, parameters, alarm timings, snooze schedules, personal holiday exemptions, and custom vacation days are stored strictly on your local device (using standard browser and operating system sandboxed storage, such as local storage or local SQLite databases). No data is ever uploaded to external cloud storage, databases, or servers controlled by the developer or any third parties.</p>
+
+            <h2>3. Device Permissions Required</h2>
+            <p>To deliver its core alarm functionality, the Application may request the following standard device permissions. These permissions are used strictly for on-device processing:</p>
+            <ul>
+                <li><strong>Alarms & Reminders:</strong> Required to schedule precise wake-up timers that fire exactly at your configured time.</li>
+                <li><strong>Vibration Control (Haptic Feedback):</strong> Used to trigger physical device vibrations when the alarm sounds, helping ensure you wake up on time.</li>
+                <li><strong>Background Activity / Wake Lock:</strong> Required to keep the alarm scheduler active and prevent the operating system from terminating or suspending the timer while your device is locked or asleep.</li>
+                <li><strong>Notification Access:</strong> Used to display pending alarm status banners, persistent snooze warnings, and wake-up alert modals.</li>
+            </ul>
+
+            <h2>4. No Location Tracking</h2>
+            <p>Although the Application provides localized holiday calendars for 10+ countries (including Sweden, Germany, Spain, France, and others), it <strong>does not access your device's GPS or location services</strong>. You select your preferred country manually in the Settings panel, and all country holiday files are bundled directly inside the Application bundle (offline-first).</p>
+
+            <h2>5. No Third-Party Analytics, Tracking, or Advertising</h2>
+            <p>To ensure a clean, battery-efficient, and secure experience:</p>
+            <ul>
+                <li>We do <strong>not</strong> integrate any mobile advertising networks (such as Google AdMob) in the base application.</li>
+                <li>We do <strong>not</strong> use analytics packages (such as Google Analytics or Firebase Analytics) to track your app interaction, buttons tapped, or alarm patterns.</li>
+                <li>We do <strong>not</strong> use tracking cookies or session identifiers.</li>
+            </ul>
+
+            <h2>6. Children's Privacy</h2>
+            <p>Because the Application collects absolutely zero personal information from any user, it does not knowingly collect or solicit personal information from children under the age of 13. If you are a parent or guardian and believe your child has transmitted any data to us, please rest assured that no data transit pathways exist in our system; however, you can reach out to us at the contact details below with any inquiries.</p>
+
+            <h2>7. GDPR and CCPA Compliance</h2>
+            <p>We are fully compliant with the European Union's General Data Protection Regulation (GDPR) and the California Consumer Privacy Act (CCPA). Because we process and transmit zero personal data, your rights to access, rectification, erasure, and restriction of processing are maintained by design—your data remains under your absolute physical control on your own mobile device.</p>
+
+            <h2>8. Changes to this Privacy Policy</h2>
+            <p>We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page. You are advised to review this Privacy Policy periodically for any changes. Changes to this Privacy Policy are effective when they are posted on this page.</p>
+
+            <h2>9. Contact Us</h2>
+            <p>If you have any questions or suggestions about this Privacy Policy, please do not hesitate to contact the developer directly at:</p>
+            <p><strong>Email:</strong> <a href="mailto:markus.fransson@gmail.com">markus.fransson@gmail.com</a></p>
+        </div>
+        <footer>
+            <p>&copy; 2026 Smart Holiday Alarm Clock. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>
