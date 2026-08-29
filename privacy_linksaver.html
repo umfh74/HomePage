@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy - LinkSaver</title>
+  <meta name="description" content="Privacy Policy for LinkSaver Android Application and Web App." />
+  <style>
+    :root {
+      --bg-color: #0f172a;
+      --card-bg: #1e293b;
+      --card-border: #334155;
+      --text-primary: #f8fafc;
+      --text-secondary: #94a3b8;
+      --accent: #6366f1;
+      --accent-hover: #4f46e5;
+      --accent-soft: rgba(99, 102, 241, 0.12);
+      --success: #10b981;
+      --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-primary);
+      font-family: var(--font-family);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      padding: 40px 20px;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 40px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid var(--card-border);
+    }
+
+    .logo-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 48px;
+      height: 48px;
+      background: var(--accent);
+      color: #ffffff;
+      font-weight: 800;
+      font-size: 24px;
+      border-radius: 14px;
+      margin-bottom: 16px;
+      box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+    }
+
+    h1 {
+      font-size: 32px;
+      font-weight: 800;
+      color: var(--text-primary);
+      margin-bottom: 8px;
+      letter-spacing: -0.5px;
+    }
+
+    .subtitle {
+      color: var(--text-secondary);
+      font-size: 15px;
+    }
+
+    .last-updated {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 4px 12px;
+      background: var(--accent-soft);
+      color: #a5b4fc;
+      border: 1px solid rgba(99, 102, 241, 0.3);
+      border-radius: 9999px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .highlight-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      padding: 24px;
+      margin-bottom: 32px;
+    }
+
+    .highlight-card h3 {
+      color: #38bdf8;
+      font-size: 16px;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .highlight-card p {
+      color: var(--text-secondary);
+      font-size: 14px;
+    }
+
+    section {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      padding: 28px;
+      margin-bottom: 24px;
+    }
+
+    h2 {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 14px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--card-border);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    p {
+      color: #cbd5e1;
+      font-size: 15px;
+      margin-bottom: 14px;
+    }
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+
+    ul {
+      list-style-type: none;
+      padding-left: 0;
+      margin: 14px 0;
+    }
+
+    li {
+      position: relative;
+      padding-left: 24px;
+      margin-bottom: 10px;
+      color: #cbd5e1;
+      font-size: 14.5px;
+    }
+
+    li::before {
+      content: "•";
+      position: absolute;
+      left: 8px;
+      top: 0;
+      color: var(--accent);
+      font-size: 18px;
+      line-height: 1;
+    }
+
+    .tag-badge {
+      display: inline-block;
+      background: rgba(99, 102, 241, 0.15);
+      color: #a5b4fc;
+      padding: 2px 8px;
+      border-radius: 6px;
+      font-family: monospace;
+      font-size: 12px;
+    }
+
+    .contact-box {
+      background: rgba(99, 102, 241, 0.08);
+      border: 1px dashed var(--accent);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin-top: 14px;
+    }
+
+    a {
+      color: #818cf8;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    a:hover {
+      color: #a5b4fc;
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      color: var(--text-secondary);
+      font-size: 13px;
+      padding-top: 20px;
+      border-top: 1px solid var(--card-border);
+    }
+
+    @media (max-width: 640px) {
+      body {
+        padding: 20px 12px;
+      }
+
+      h1 {
+        font-size: 26px;
+      }
+
+      section {
+        padding: 20px 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <header>
+      <div class="logo-badge">L</div>
+      <h1>Privacy Policy</h1>
+      <p class="subtitle">LinkSaver Mobile & Web Application</p>
+      <span class="last-updated">Last Updated: August 29, 2026</span>
+    </header>
+
+    <div class="highlight-card">
+      <h3>🔒 Privacy Summary at a Glance</h3>
+      <p>
+        <strong>LinkSaver is an offline-first, private bookmarking utility.</strong> We do not track you, we do not require account registration, we do not sell your data, and all your saved links, notes, and tags remain stored locally on your own device.
+      </p>
+    </div>
+
+    <section id="introduction">
+      <h2>1. Introduction</h2>
+      <p>
+        This Privacy Policy explains how <strong>LinkSaver</strong> ("we", "our", or "the app") handles your data. LinkSaver is designed to help you organize and bookmark URLs from YouTube, Instagram, articles, GitHub repositories, and the web.
+      </p>
+      <p>
+        By installing, accessing, or using LinkSaver on Android or Web, you agree to the terms described in this Privacy Policy.
+      </p>
+    </section>
+
+    <section id="data-collection">
+      <h2>2. Information We Handle</h2>
+      <p>
+        LinkSaver is built with a privacy-by-design approach. We collect and store only the minimal information required to deliver bookmarking features:
+      </p>
+      <ul>
+        <li><strong>User-Provided Content:</strong> URLs you input or share into the application, custom titles, user-defined tags (e.g. <span class="tag-badge">#video</span>, <span class="tag-badge">#dev</span>), and personal notes.</li>
+        <li><strong>Locally Generated Metadata:</strong> Derived metadata such as website domain, platform category (YouTube, Instagram, GitHub, Article), and public thumbnail links (e.g. public YouTube video preview images).</li>
+        <li><strong>Read & Favorite Status:</strong> Flags indicating whether a bookmark is marked as read or starred as a favorite.</li>
+      </ul>
+      <p>
+        <strong>We do NOT collect:</strong> Personal identification details (such as names, phone numbers, or passwords), location coordinates, browsing history from other apps, contacts, device identifiers for tracking, or analytics telemetry.
+      </p>
+    </section>
+
+    <section id="storage-security">
+      <h2>3. Where Your Data is Stored</h2>
+      <p>
+        <strong>On-Device Local Storage:</strong> All saved links, tags, and notes are saved exclusively inside your device's local database (Android Room SQLite database on Android, or browser local storage on Web).
+      </p>
+      <p>
+        No bookmark data is uploaded to remote backend servers, cloud databases, or third-party marketing services.
+      </p>
+    </section>
+
+    <section id="android-permissions">
+      <h2>4. Android Permissions & Share Target Intent</h2>
+      <p>
+        The LinkSaver Android application uses the following system capabilities:
+      </p>
+      <ul>
+        <li><strong><span class="tag-badge">android.permission.INTERNET</span>:</strong> Used strictly to fetch public thumbnail previews (such as YouTube video thumbnails) and to open links in your default web browser when tapped.</li>
+        <li><strong><span class="tag-badge">android.permission.ACCESS_NETWORK_STATE</span>:</strong> Used to check network connectivity before fetching web preview assets.</li>
+        <li><strong>Share Target Intent (<span class="tag-badge">Intent.ACTION_SEND</span>):</strong> Allows LinkSaver to receive shared URLs directly from third-party apps (such as the YouTube app, Instagram app, or web browsers) when you explicitly choose "LinkSaver" in your device's native share menu.</li>
+      </ul>
+    </section>
+
+    <section id="third-party-services">
+      <h2>5. Third-Party Links & Services</h2>
+      <p>
+        When you tap on a saved bookmark, LinkSaver invokes your device's default web browser or appropriate native application (e.g., YouTube app) using standard Android Intents or web hyperlinks.
+      </p>
+      <p>
+        We have no control over and assume no responsibility for the content, privacy policies, or practices of any third-party websites or services you visit.
+      </p>
+    </section>
+
+    <section id="data-retention-deletion">
+      <h2>6. Data Retention and Deletion (Your Rights)</h2>
+      <p>
+        Because all your data is stored locally on your device:
+      </p>
+      <ul>
+        <li><strong>Item Deletion:</strong> You can delete any individual bookmark or tag directly within the application at any time.</li>
+        <li><strong>Complete Data Erasure:</strong> You can permanently wipe all saved links and data by clearing the app's storage in Android Settings (<strong>Settings → Apps → LinkSaver → Storage → Clear Data</strong>) or by uninstalling the application.</li>
+        <li><strong>GDPR & CCPA Compliance:</strong> As no personal data is collected or processed on external servers, you maintain complete and sovereign control over your information at all times.</li>
+      </ul>
+    </section>
+
+    <section id="children-privacy">
+      <h2>7. Children's Privacy</h2>
+      <p>
+        LinkSaver does not knowingly collect or solicit any personal information from children under the age of 13. The application is a general-purpose utility for organizing web links.
+      </p>
+    </section>
+
+    <section id="changes">
+      <h2>8. Changes to This Privacy Policy</h2>
+      <p>
+        We may update our Privacy Policy periodically to reflect changes in legal requirements or application updates. Any revisions will be published with an updated "Last Updated" date at the top of this document.
+      </p>
+    </section>
+
+    <section id="contact">
+      <h2>9. Contact Us</h2>
+      <p>
+        If you have any questions, feedback, or concerns regarding this Privacy Policy or LinkSaver, please contact us:
+      </p>
+      <div class="contact-box">
+        <p><strong>Developer:</strong> Markus Fransson</p>
+        <p><strong>Email:</strong> <a href="mailto:umfh74@gmail.com">umfh74@gmail.com</a></p>
+        <p><strong>Project:</strong> LinkSaver Application</p>
+      </div>
+    </section>
+
+    <footer>
+      <p>&copy; 2026 LinkSaver. All rights reserved.</p>
+    </footer>
+  </div>
+
+</body>
+</html>
