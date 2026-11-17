@@ -206,7 +206,7 @@
     </div>
 
     <h1>Integritetspolicy / Privacy Policy</h1>
-    <p class="subtitle"><strong>Applikation:</strong> Final Count Down (Memento Mori) &bull; <strong>Senast uppdaterad:</strong> 30 oktober 2026</p>
+    <p class="subtitle"><strong>Applikation:</strong> Final Count Down (Memento Mori) &bull; <strong>Senast uppdaterad:</strong> 17 november 2026</p>
 
     <div class="nav-links">
       <a href="#svenska">Svenska (SE)</a>
@@ -216,7 +216,7 @@
     <p>Denna integritetspolicy beskriver hur <strong>Final Count Down</strong> hanterar dina personuppgifter och enhetsinformation i enlighet med EU:s allmänna dataskyddsförordning (GDPR) och Google Play Developer Policy.</p>
 
     <div class="highlight-card">
-      <p style="margin: 0;"><strong>Viktigaste principen:</strong> Final Count Down är utvecklad med absolut integritet och dataminimering som ledstjärna. <strong>Ingen personlig information eller sensordata säljs, delas eller överförs någonsin till externa servrar, molntjänster eller annonsnätverk.</strong></p>
+      <p style="margin: 0;"><strong>Viktigaste principen:</strong> Final Count Down är utvecklad med absolut integritet och dataminimering som ledstjärna. <strong>Ingen personlig information eller sensordata säljs, spåras eller delas med externa analys- eller annonsnätverk.</strong> All bakgrundsövervakning sker lokalt på din enhet.</p>
     </div>
 
     <!-- SEKTION 1: SVENSKA -->
@@ -224,52 +224,68 @@
       <h2>1. Svenska (SE)</h2>
 
       <h3>Sammanfattning</h3>
-      <p>Appen fungerar helt offline och lokalt på din enhet. All beräkning av livstid, 4 000-veckorsmatrisen, inaktivitetsdetektering och skärmtidsräkning sker uteslutande i telefonens eget minne.</p>
+      <p>Appen fungerar som standard helt offline och lokalt på din enhet. All beräkning av livstid, 4 000-veckorsmatrisen, inaktivitetsdetektering, skärmtid och måluppfyllelse sker uteslutande i telefonens eget minne. Molnexport eller AI-delning sker enbart om du själv som Pro-användare aktivt initierar och bekräftar en export.</p>
 
       <h3>1.1 Vilka uppgifter behandlas och varför?</h3>
       <ol>
         <li>
-          <strong>Rörelsesensor (Accelerometer):</strong>
+          <strong>Rörelsesensorer (Accelerometer &amp; Stegdetektor / Aktivitetsigenkänning):</strong>
           <ul>
-            <li><strong>Syfte:</strong> Att avgöra om användaren har suttit stilla under längre tid än det valda tröskelvärdet för att kunna skicka ett inaktivitetslarm.</li>
-            <li><strong>Hantering:</strong> Sensordata läses av och analyseras i millisekunder uteslutande i enhetens RAM-minne. Ingen rörelsedata sparas på disk och inga sensordata lämnar någonsin telefonen.</li>
+            <li><strong>Syfte:</strong> Att avgöra om användaren har suttit stilla under längre tid än det valda tröskelvärdet samt filtrera bort skrivbordsvibrationer via verklig gångkadens för att skicka inaktivitetslarm och logga daglig aktivitetsminutstatistik.</li>
+            <li><strong>Hantering:</strong> Rådata från sensorer analyseras i realtid uteslutande i enhetens RAM-minne. Endast lokala minutsummeringar sparas i din enhets privata lagring.</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Ungefärlig hastighet / Plats (Valfritt fordonsskydd):</strong>
+          <ul>
+            <li><strong>Syfte:</strong> Att upptäcka om du färdas i bil, buss eller tåg (&ge; 15 km/h) så att stillasittandelarmet automatiskt pausas under resor.</li>
+            <li><strong>Hantering:</strong> Enbart hastighetsvärdet läses tillfälligt i enhetens RAM-minne medan tjänsten är aktiv. <strong>Inga GPS-koordinater, rutter eller platshistorik sparas någonsin på disk eller skickas utanför telefonen.</strong> Behörigheten är valfri och föregås av en tydlig informationsdialog.</li>
           </ul>
         </li>
         <li>
           <strong>Skärmtids- och skärmtillstånd:</strong>
           <ul>
-            <li><strong>Syfte:</strong> Att registrera när skärmen är aktiv för att ge existentiella påminnelser vid lång sammanhängande skärmanvändning.</li>
-            <li><strong>Hantering:</strong> En lokal räknare körs i bakgrunden via lokala systemhändelser (<code>ACTION_SCREEN_ON</code>/<code>ACTION_SCREEN_OFF</code>). Inga uppgifter om vilka appar som används, surfhistorik eller innehåll på skärmen samlas in eller sparas.</li>
+            <li><strong>Syfte:</strong> Att registrera när skärmen är aktiv inom ditt valda larmintervall för att ge påminnelser, visa statistikgrafer (Dag/Vecka/År) och räkna måluppfyllelse.</li>
+            <li><strong>Hantering:</strong> En lokal räknare lyssnar på systemets skärmhändelser (<code>ACTION_SCREEN_ON</code>/<code>ACTION_SCREEN_OFF</code>). Inga uppgifter om vilka appar du använder, surfhistorik eller innehåll på skärmen samlas in.</li>
           </ul>
         </li>
         <li>
-          <strong>Måldatum, födelsedatum och inställningar:</strong>
+          <strong>Måldatum, födelsedatum, mål &amp; inställningar:</strong>
           <ul>
-            <li><strong>Syfte:</strong> Att beräkna återstående tid och visualisera 4 000-veckorsmatrisen.</li>
-            <li><strong>Hantering:</strong> Sparas uteslutande lokalt i appens privata, sandlåde-skyddade <code>SharedPreferences</code> på din enhet.</li>
+            <li><strong>Syfte:</strong> Att beräkna återstående tid, 4 000-veckorsmatrisen, dina personliga skärm- och aktivitetsmål samt firandenotiser.</li>
+            <li><strong>Hantering:</strong> Sparas uteslutande lokalt i appens privata, sandlåde-skyddade <code>SharedPreferences</code> (respektive <code>LocalStorage</code> i webbläsaren).</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Valfri Google Drive &amp; AI-export (Pro, användarinitierad):</strong>
+          <ul>
+            <li><strong>Syfte:</strong> Att låta betalande Pro-användare säkerhetskopiera/redigera sin citatsamling eller exportera statistik (JSON/CSV/Markdown) för egen analys i Google Drive eller extern AI-assistent.</li>
+            <li><strong>Hantering:</strong> Aktiveras enbart vid uttrycklig användaråtgärd och bekräftelse. I webbappen används minsta möjliga OAuth-scope (<code>drive.file</code>). I Android sparas filen lokalt eller via Androids dokumentväljare/delningsmeny efter ditt val.</li>
           </ul>
         </li>
         <li>
           <strong>Notiser, ljud och haptik:</strong>
           <ul>
-            <li><strong>Syfte:</strong> Att presentera korta existentiella påminnelser, tibetanska klangskålsljud och haptiska hjärtslagsvibrationer vid inställda tidpunkter.</li>
-            <li><strong>Hantering:</strong> Alla ljud och vibrationer syntetiseras i realtid lokalt på enheten via kod (PCM AudioTrack och VibrationEffect). Inga externa ljudströmmar hämtas.</li>
+            <li><strong>Syfte:</strong> Att presentera påminnelser, belöningsnotiser vid uppfyllda mål, tibetanska klangskålsljud och haptiska hjärtslagsvibrationer.</li>
+            <li><strong>Hantering:</strong> Alla ljud och vibrationer syntetiseras i realtid lokalt på enheten via kod (PCM AudioTrack och VibrationEffect).</li>
           </ul>
         </li>
       </ol>
 
       <h3>1.2 Behörigheter som appen begär</h3>
       <ul>
-        <li><code>POST_NOTIFICATIONS</code> (Android 13+): Krävs för att visa inaktivitets-, skärmtids- och morgonreflektionslarm i telefonens notisfält.</li>
-        <li><code>HIGH_SAMPLING_RATE_SENSORS</code>: Krävs för att accelerometern ska kunna registrera mikrorörelser vid stillasittande.</li>
-        <li><code>RECEIVE_BOOT_COMPLETED</code>: Krävs för att automatiskt återaktivera den exakta schemalagda morgonreflektionen efter att telefonen startats om.</li>
-        <li><code>SCHEDULE_EXACT_ALARM</code> & <code>USE_EXACT_ALARM</code>: Krävs för att leverera morgonreflektionen vid exakt angiven tidpunkt (kl. 07:30) via <code>setAlarmClock</code> utan att fördröjas av Android Doze-läge.</li>
-        <li><code>FOREGROUND_SERVICE</code> & <code>FOREGROUND_SERVICE_HEALTH</code>: Krävs för att hålla stillasittande- och skärmtidsövervakningen aktiv och tillförlitlig när appen körs i bakgrunden eller telefonen är i fickan.</li>
-        <li><code>WAKE_LOCK</code>: Tillåter enheten att väckas under bråkdelen av en sekund för att spela klangskålen och publicera notisen vid larm.</li>
+        <li><code>POST_NOTIFICATIONS</code> (Android 13+): Krävs för att visa inaktivitets-, skärmtids-, mål- och morgonreflektionslarm i notisfältet.</li>
+        <li><code>ACTIVITY_RECOGNITION</code> (Android 10+): Används tillsammans med hårdvarans stegdetektor för att skilja verklig fysisk rörelse från stillasittande.</li>
+        <li><code>ACCESS_COARSE_LOCATION</code> &amp; <code>ACCESS_FINE_LOCATION</code> (Valfri): Används enbart i RAM för fordonshastighet (&ge; 15 km/h) för att pausa rörelselarm under bil- eller tågresor.</li>
+        <li><code>HIGH_SAMPLING_RATE_SENSORS</code>: Krävs för att accelerometern ska kunna registrera gångkadens noggrant.</li>
+        <li><code>RECEIVE_BOOT_COMPLETED</code>: Krävs för att automatiskt återaktivera schemalagd morgonreflektion efter omstart av enheten.</li>
+        <li><code>SCHEDULE_EXACT_ALARM</code>: Används för att leverera den schemalagda morgonreflektionen exakt (med mjuk reservrutin om exakt alarm inte beviljats).</li>
+        <li><code>FOREGROUND_SERVICE</code> &amp; <code>FOREGROUND_SERVICE_HEALTH</code>: Krävs för tillförlitlig bakgrundsövervakning av rörelse och skärmtid.</li>
+        <li><code>WAKE_LOCK</code>: Tillåter enheten att kortvarigt väckas vid larmutlösning.</li>
       </ul>
 
-      <h3>1.3 Tredjepartstjänster & Annonser</h3>
-      <p>Appen innehåller <strong>inga annonser</strong>, inga spårningspixlar, inga användarspårare och inga analys-SDK:er från tredje part (inga Facebook SDK, inga datamäklare, ingen telemetri).</p>
+      <h3>1.3 Betalningar &amp; Tredjepartstjänster</h3>
+      <p>Pro-köp och prenumerationer i Android-appen hanteras säkert via <strong>Google Play Billing</strong>. Appen samlar inte in eller lagrar kreditkorts- eller faktureringsuppgifter. Appen innehåller inga annonsnätverk från tredje part, inga spårningspixlar och ingen beteendeanalys.</p>
 
       <div class="contact-box">
         <h3>1.4 Kontakt</h3>
@@ -285,58 +301,71 @@
       <h2>2. English (EN)</h2>
 
       <h3>Overview</h3>
-      <p>Final Count Down is built on a zero-tracking, privacy-first foundation. <strong>No personal data, device identifiers, or sensor measurements are ever sold, transmitted to external advertising networks, or harvested.</strong></p>
+      <p>Final Count Down is built on a zero-tracking, privacy-first foundation. <strong>No personal data, device identifiers, or sensor measurements are ever sold, harvested, or transmitted to external analytics or advertising brokers.</strong> All background monitoring operates locally on your device.</p>
 
       <h3>2.1 Data Processing</h3>
       <ol>
         <li>
-          <strong>Motion Sensors (Accelerometer):</strong>
+          <strong>Motion Sensors (Accelerometer &amp; Step Detector / Activity Recognition):</strong>
           <ul>
-            <li><strong>Purpose:</strong> Detects prolonged physical inactivity to trigger stillness and movement reminders.</li>
-            <li><strong>Processing:</strong> Processed purely in transient on-device RAM in real-time. Never logged to disk or uploaded to any remote server.</li>
+            <li><strong>Purpose:</strong> Detects prolonged physical inactivity, filters out desk vibrations using rhythmic walking cadence, triggers movement reminders, and aggregates daily active minutes.</li>
+            <li><strong>Processing:</strong> Raw sensor events are processed in transient on-device RAM in real time. Only anonymous daily/hourly minute totals are stored locally on your device.</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Vehicle Speed / Location (Optional Vehicle Protection):</strong>
+          <ul>
+            <li><strong>Purpose:</strong> Detects vehicle travel (&ge; 15 km/h) in cars, buses, or trains to automatically pause inactivity alarms during transit.</li>
+            <li><strong>Processing:</strong> Only current speed is checked transiently in device RAM while monitoring is active. <strong>GPS coordinates, routes, or location histories are never saved to storage or transmitted off your device.</strong> Preceded by an explicit in-app disclosure.</li>
           </ul>
         </li>
         <li>
           <strong>Screen Activity:</strong>
           <ul>
-            <li><strong>Purpose:</strong> Monitors active display duration to interrupt excessive continuous screen time.</li>
-            <li><strong>Processing:</strong> Uses local system broadcast receivers (<code>ACTION_SCREEN_ON</code>/<code>OFF</code>). Does NOT monitor which applications you use, your browsing history, or your screen contents.</li>
+            <li><strong>Purpose:</strong> Monitors active display duration within your active alarm schedule to interrupt excessive screen sessions, render Day/Week/Year charts, and evaluate goals.</li>
+            <li><strong>Processing:</strong> Uses local system broadcast receivers (<code>ACTION_SCREEN_ON</code>/<code>OFF</code>). Does NOT monitor which apps you use, browsing history, or screen contents.</li>
           </ul>
         </li>
         <li>
-          <strong>Target Dates, Birth Dates & Preferences:</strong>
+          <strong>Target Dates, Birth Dates, Goals &amp; Preferences:</strong>
           <ul>
-            <li><strong>Purpose:</strong> Calculate countdown metrics and render the 4,000 Weeks Life Matrix.</li>
-            <li><strong>Storage:</strong> Stored locally in private, sandboxed Android <code>SharedPreferences</code>.</li>
+            <li><strong>Purpose:</strong> Calculate countdown metrics, render the 4,000 Weeks Life Matrix, and evaluate Screen Time and Activity goals.</li>
+            <li><strong>Storage:</strong> Stored locally in private, sandboxed Android <code>SharedPreferences</code> (or browser <code>LocalStorage</code>).</li>
           </ul>
         </li>
         <li>
-          <strong>Audio & Haptics:</strong>
+          <strong>Optional Google Drive &amp; AI Export (Pro, User-Initiated):</strong>
+          <ul>
+            <li><strong>Purpose:</strong> Allows Pro users to mirror quotes or export statistics (JSON/CSV/Markdown) to Google Drive or share with an external AI assistant for personal analysis.</li>
+            <li><strong>Processing:</strong> Strictly opt-in and only runs after explicit user confirmation. Web uses the minimal <code>drive.file</code> scope; Android uses the native system document picker/share sheet.</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Audio &amp; Haptics:</strong>
           <ul>
             <li><strong>Purpose:</strong> Play the synthesized Tibetan singing bowl sound and gentle heartbeat vibration at alarm intervals.</li>
-            <li><strong>Processing:</strong> Synthesized procedurally on the device (PCM 16-bit). No remote media files are downloaded.</li>
-          </ul>
-        </li>
-        <li>
-          <strong>Third-Party Trackers:</strong>
-          <ul>
-            <li>Zero advertising libraries, zero tracking pixels, zero analytics brokers.</li>
+            <li><strong>Processing:</strong> Synthesized procedurally on the device (PCM 16-bit).</li>
           </ul>
         </li>
       </ol>
 
       <h3>2.2 Permissions</h3>
       <ul>
-        <li><code>POST_NOTIFICATIONS</code> (Android 13+): Delivers existential reminder notifications.</li>
-        <li><code>HIGH_SAMPLING_RATE_SENSORS</code>: Allows the accelerometer to detect micro-movements accurately.</li>
-        <li><code>SCHEDULE_EXACT_ALARM</code> & <code>USE_EXACT_ALARM</code>: Triggers the daily morning reflection at the exact scheduled second using <code>AlarmManager.setAlarmClock()</code>, avoiding Doze mode delays.</li>
-        <li><code>FOREGROUND_SERVICE</code> & <code>FOREGROUND_SERVICE_HEALTH</code>: Keeps stillness and screen time tracking reliable while running in the background.</li>
-        <li><code>RECEIVE_BOOT_COMPLETED</code>: Re-registers scheduled alarms following a device restart.</li>
+        <li><code>POST_NOTIFICATIONS</code> (Android 13+): Delivers existential reminder and goal celebration notifications.</li>
+        <li><code>ACTIVITY_RECOGNITION</code> (Android 10+): Pairs with the hardware step detector to verify real walking activity.</li>
+        <li><code>ACCESS_COARSE_LOCATION</code> &amp; <code>ACCESS_FINE_LOCATION</code> (Optional): Reads local speed in RAM solely to pause inactivity alarms while traveling in vehicles (&ge; 15 km/h).</li>
+        <li><code>HIGH_SAMPLING_RATE_SENSORS</code>: Allows the accelerometer to measure walking cadence accurately.</li>
+        <li><code>SCHEDULE_EXACT_ALARM</code>: Triggers the daily morning reflection on time (with graceful inexact fallback if denied).</li>
+        <li><code>FOREGROUND_SERVICE</code> &amp; <code>FOREGROUND_SERVICE_HEALTH</code>: Keeps stillness and screen time tracking reliable in the background.</li>
+        <li><code>RECEIVE_BOOT_COMPLETED</code>: Re-registers scheduled morning alarms following a device restart.</li>
         <li><code>WAKE_LOCK</code>: Briefly wakes CPU to sound the chime when an alarm threshold is met.</li>
       </ul>
 
+      <h3>2.3 Payments &amp; Third-Party Services</h3>
+      <p>Pro purchases and subscriptions in the Android app are processed securely through <strong>Google Play Billing</strong>. The app never collects or stores payment credentials and contains zero third-party ad trackers, tracking pixels, or telemetry SDKs.</p>
+
       <div class="contact-box">
-        <h3>2.3 Contact</h3>
+        <h3>2.4 Contact</h3>
         <p>For privacy inquiries and data protection questions:</p>
         <p><strong>Email:</strong> <a href="mailto:markus.fransson@gmail.com">markus.fransson@gmail.com</a></p>
       </div>
